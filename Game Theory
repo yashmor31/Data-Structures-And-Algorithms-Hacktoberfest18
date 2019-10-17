@@ -35,3 +35,29 @@ Step 3: Now it's a turn for Maximizer, and it will again choose the maximum of a
 For node A max(4, -3)= 4
 Mini-Max Algorithm in AI
 That was the complete workflow of the minimax two player game.
+
+
+
+
+
+
+
+Program for Mini-Max :
+function minimax(board, depth, isMaximizingPlayer):
+
+    if current board state is a terminal state :
+        return value of the board
+    
+    if isMaximizingPlayer :
+        bestVal = -INFINITY 
+        for each move in board :
+            value = minimax(board, depth+1, false)
+            bestVal = max( bestVal, value) 
+        return bestVal
+
+    else :
+        bestVal = +INFINITY 
+        for each move in board :
+            value = minimax(board, depth+1, true)
+            bestVal = min( bestVal, value) 
+        return bestVal
